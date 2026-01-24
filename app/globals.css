@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
+@theme inline {
+  /* EFH Consulting Group Color Palette */
+  --color-gold: #D4AF37;
+  --color-gold-dark: #B8962E;
+  --color-gold-light: #F4E4BA;
+  --color-black: #0A0A0A;
+  --color-gray-dark: #1A1A1A;
+  --color-gray-light: #F5F5F5;
+
+  /* Typography */
+  --font-sans: var(--font-inter);
+
+  /* Custom spacing */
+  --spacing-section: 5rem;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #0A0A0A;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Aboreto font for headings - premium elegant feel */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-aboreto), serif;
+  letter-spacing: 0.02em;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: #D4AF37;
+  color: #0A0A0A;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8962E;
 }
