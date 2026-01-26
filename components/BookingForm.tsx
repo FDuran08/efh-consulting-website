@@ -78,6 +78,7 @@ export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [step, setStep] = useState<'datetime' | 'details'>('datetime');
+  const [confirmedBooking, setConfirmedBooking] = useState<{ date: string; time: string } | null>(null);
 
   const handleDateSelect = (date: Date) => {
     setFormData(prev => ({ ...prev, date: formatDateISO(date) }));
@@ -120,18 +121,11 @@ export default function BookingForm() {
       });
 
       if (response.ok) {
+        // Save booking details before clearing form
+        setConfirmedBooking({ date: formData.date, time: formData.time });
         setSubmitStatus('success');
         // Track conversion in analytics
         trackConversion('booking', 0);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          date: '',
-          time: '',
-        });
-        setStep('datetime');
       } else {
         setSubmitStatus('error');
       }
@@ -142,8 +136,22 @@ export default function BookingForm() {
     }
   };
 
+  const handleBookAnother = () => {
+    setSubmitStatus('idle');
+    setConfirmedBooking(null);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      service: '',
+      date: '',
+      time: '',
+    });
+    setStep('datetime');
+  };
+
   // Success state
-  if (submitStatus === 'success') {
+  if (submitStatus === 'success' && confirmedBooking) {
     return (
       <div className="text-center py-8">
         <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -156,16 +164,16 @@ export default function BookingForm() {
           We&apos;ve sent a confirmation email to your inbox with all the details.
         </p>
         <p className="text-gold font-medium">
-          {formData.date && new Date(formData.date).toLocaleDateString('en-US', {
+          {new Date(confirmedBooking.date).toLocaleDateString('en-US', {
             weekday: 'long',
             month: 'long',
             day: 'numeric',
-          })} at {formData.time}
+          })} at {confirmedBooking.time}
         </p>
         <Button
           variant="outline"
           className="mt-6"
-          onClick={() => setSubmitStatus('idle')}
+          onClick={handleBookAnother}
         >
           Book Another
         </Button>
