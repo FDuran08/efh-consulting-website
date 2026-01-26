@@ -53,9 +53,9 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/contact">
+            <Link href="/book">
               <Button variant="primary" size="sm">
-                Get Started
+                Book Consultation
               </Button>
             </Link>
           </div>
@@ -110,9 +110,9 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="pt-2">
-                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/book" onClick={() => setIsMenuOpen(false)}>
                   <Button variant="primary" size="md" className="w-full">
-                    Get Started
+                    Book Consultation
                   </Button>
                 </Link>
               </div>

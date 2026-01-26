@@ -2,10 +2,12 @@
 
 import { useState, FormEvent } from 'react';
 import { Button, Input, Textarea, Select } from './ui';
+import { trackConversion } from '@/lib/analytics';
 
 interface FormData {
   name: string;
   email: string;
+  phone: string;
   company: string;
   service: string;
   message: string;
@@ -15,6 +17,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',
     company: '',
     service: '',
     message: '',
@@ -43,9 +46,12 @@ export default function ContactForm() {
 
       if (response.ok) {
         setSubmitStatus('success');
+        // Track conversion in analytics
+        trackConversion('contact_form', 0);
         setFormData({
           name: '',
           email: '',
+          phone: '',
           company: '',
           service: '',
           message: '',
@@ -87,6 +93,15 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
+          id="phone"
+          name="phone"
+          type="tel"
+          label="Phone Number"
+          placeholder="(555) 123-4567"
+          value={formData.phone}
+          onChange={handleChange}
+        />
+        <Input
           id="company"
           name="company"
           type="text"
@@ -95,22 +110,23 @@ export default function ContactForm() {
           value={formData.company}
           onChange={handleChange}
         />
-        <Select
-          id="service"
-          name="service"
-          label="Service Interest"
-          value={formData.service}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select a service...</option>
-          <option value="web-development">Web Development</option>
-          <option value="marketing">Marketing Integration</option>
-          <option value="bookkeeping">Bookkeeping</option>
-          <option value="multiple">Multiple Services</option>
-          <option value="other">Other</option>
-        </Select>
       </div>
+
+      <Select
+        id="service"
+        name="service"
+        label="Service Interest"
+        value={formData.service}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select a service...</option>
+        <option value="web-development">Web Development</option>
+        <option value="marketing">Marketing Integration</option>
+        <option value="bookkeeping">Bookkeeping</option>
+        <option value="multiple">Multiple Services</option>
+        <option value="other">Other</option>
+      </Select>
 
       <Textarea
         id="message"
@@ -125,12 +141,12 @@ export default function ContactForm() {
       {/* Status messages */}
       {submitStatus === 'success' && (
         <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-sm">
-          Thank you for your message! We&apos;ll get back to you soon.
+          Thank you for your message! We&apos;ll get back to you within 24 hours.
         </div>
       )}
       {submitStatus === 'error' && (
         <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm">
-          Something went wrong. Please try again or email us directly.
+          Something went wrong. Please try again or email us directly at contact@efhconsultinggroup.com
         </div>
       )}
 

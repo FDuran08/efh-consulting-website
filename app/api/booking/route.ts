@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { trackConversion } from '@/lib/analytics';
 
-interface ContactFormData {
+interface BookingFormData {
   name: string;
   email: string;
-  phone?: string;
-  company?: string;
+  phone: string;
   service: string;
-  message: string;
+  date: string;
+  time: string;
 }
 
 // CRM API endpoint
@@ -15,10 +14,10 @@ const CRM_API_URL = process.env.CRM_API_URL || 'https://your-crm.onrender.com';
 
 export async function POST(request: NextRequest) {
   try {
-    const body: ContactFormData = await request.json();
+    const body: BookingFormData = await request.json();
 
     // Validate required fields
-    if (!body.name || !body.email || !body.service || !body.message) {
+    if (!body.name || !body.email || !body.phone || !body.service || !body.date || !body.time) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -34,7 +33,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send to CRM to create lead
+    // Send to CRM to create lead + booking
     try {
       const crmResponse = await fetch(`${CRM_API_URL}/api/public/lead`, {
         method: 'POST',
@@ -45,10 +44,10 @@ export async function POST(request: NextRequest) {
           name: body.name,
           email: body.email,
           phone: body.phone,
-          company: body.company,
           service: body.service,
-          message: body.message,
-          source: 'contact_form',
+          source: 'booking',
+          bookingDate: body.date,
+          bookingTime: body.time,
         }),
       });
 
@@ -62,11 +61,11 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { success: true, message: 'Form submitted successfully' },
+      { success: true, message: 'Booking submitted successfully' },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error('Booking form error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

@@ -197,6 +197,7 @@ const FUNNEL_STEPS: Record<string, { step: number; name: string }> = {
   '/services': { step: 2, name: 'Services' },
   '/pricing': { step: 3, name: 'Pricing' },
   '/contact': { step: 4, name: 'Contact Page' },
+  '/book': { step: 4, name: 'Booking Page' },
 };
 
 // Track funnel progression
