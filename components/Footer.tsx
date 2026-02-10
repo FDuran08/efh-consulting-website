@@ -4,8 +4,8 @@ import Image from 'next/image';
 const footerLinks = {
   services: [
     { href: '/services#web-development', label: 'Web Development' },
-    { href: '/services#marketing', label: 'Marketing Integration' },
-    { href: '/services#bookkeeping', label: 'Bookkeeping' },
+    { href: '/services#paid-ads', label: 'Paid Ad Marketing' },
+    { href: '/services#social-media', label: 'Social Media Management' },
   ],
   company: [
     { href: '/about', label: 'About Us' },
@@ -34,8 +34,8 @@ export default function Footer() {
               <span className="text-white text-sm tracking-wide">Consulting Group</span>
             </Link>
             <p className="text-gray-400 text-sm max-w-md mb-4">
-              Empowering businesses with professional web development, marketing integration,
-              and bookkeeping services. Based in the Palm Springs area, serving clients nationwide.
+              Empowering businesses with professional web development, paid ad marketing,
+              and social media management. Based in the Palm Springs area, serving clients nationwide.
             </p>
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

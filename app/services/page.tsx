@@ -5,7 +5,7 @@ import { Button, Card } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'Web development, marketing integration, and bookkeeping services for businesses. Custom solutions tailored to your needs.',
+  description: 'Web development, paid ad marketing, and social media management services for businesses. Custom solutions tailored to your needs.',
 };
 
 const services = [
@@ -49,83 +49,83 @@ const services = [
     technologies: ['Next.js', 'React', 'WordPress', 'Tailwind CSS', 'Node.js'],
   },
   {
-    id: 'marketing',
+    id: 'paid-ads',
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
       </svg>
     ),
-    title: 'Marketing Integration',
-    subtitle: 'Connect with your customers everywhere',
+    title: 'Paid Ad Marketing',
+    subtitle: 'Reach your ideal customers with targeted ads',
     image: '/images/service-marketing.png',
-    description: 'Expand your reach and streamline your marketing efforts. We help you establish a strong presence on social media and food delivery platforms, ensuring consistent branding across all channels.',
+    description: 'Drive qualified traffic and generate leads with strategic paid advertising campaigns. We manage your ad spend across Google, Facebook, and Instagram to maximize your return on investment.',
     features: [
       {
-        title: 'Social Media Setup',
-        description: 'Professional profiles on Facebook, Instagram, Google Business, and more.',
+        title: 'Google Ads Management',
+        description: 'Search, display, and local service ads to capture customers actively looking for you.',
       },
       {
-        title: 'Food Delivery Integration',
-        description: 'Get your business on DoorDash, UberEats, Grubhub, and other platforms.',
+        title: 'Facebook & Instagram Ads',
+        description: 'Targeted social media campaigns that reach your ideal audience.',
       },
       {
-        title: 'Brand Consistency',
-        description: 'Unified messaging and visuals across all your marketing channels.',
+        title: 'Campaign Strategy',
+        description: 'Custom ad strategies designed around your business goals and budget.',
       },
       {
-        title: 'Analytics & Tracking',
-        description: 'Understand your audience with detailed insights and reporting.',
+        title: 'Performance Tracking',
+        description: 'Detailed analytics and reporting on ad performance and ROI.',
       },
       {
-        title: 'Content Strategy',
-        description: 'Guidance on what to post and when to maximize engagement.',
+        title: 'A/B Testing',
+        description: 'Continuous optimization through testing different ad creatives and audiences.',
       },
       {
-        title: 'Platform Training',
-        description: 'Learn how to manage your profiles and make the most of each platform.',
+        title: 'Budget Management',
+        description: 'Smart allocation of your ad budget to maximize results.',
       },
     ],
-    platforms: ['Facebook', 'Instagram', 'Google Business', 'DoorDash', 'UberEats', 'Grubhub', 'Yelp'],
+    platforms: ['Google Ads', 'Facebook Ads', 'Instagram Ads', 'YouTube Ads'],
   },
   {
-    id: 'bookkeeping',
+    id: 'social-media',
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
       </svg>
     ),
-    title: 'Bookkeeping Services',
-    subtitle: 'Keep your finances in order',
-    image: '/images/bookkeeping-efh.png',
-    description: 'Focus on running your business while we handle the numbers. Our bookkeeping services help you stay organized, compliant, and informed about your financial health.',
+    title: 'Social Media Management',
+    subtitle: 'Build your brand and engage your audience',
+    image: '/images/service-social.png',
+    description: 'Stay top of mind with consistent, engaging social media content. We handle your social presence so you can focus on running your business while we build your online community.',
     features: [
       {
-        title: 'Monthly Reconciliation',
-        description: 'Regular reconciliation of accounts to ensure accuracy.',
+        title: 'Content Creation',
+        description: 'Professional posts, graphics, and videos tailored to your brand.',
       },
       {
-        title: 'Financial Reports',
-        description: 'Clear, easy-to-understand reports on your business performance.',
+        title: 'Posting Schedule',
+        description: 'Consistent posting at optimal times for maximum engagement.',
       },
       {
-        title: 'Tax Preparation Support',
-        description: 'Organized records and documentation ready for tax season.',
+        title: 'Community Management',
+        description: 'Respond to comments, messages, and reviews on your behalf.',
       },
       {
-        title: 'Expense Tracking',
-        description: 'Categorized expenses to understand where your money goes.',
+        title: 'Brand Voice Development',
+        description: 'Create a consistent tone and style across all platforms.',
       },
       {
-        title: 'Invoice Management',
-        description: 'Track receivables and ensure you get paid on time.',
+        title: 'Analytics & Insights',
+        description: 'Monthly reports on growth, engagement, and audience demographics.',
       },
       {
-        title: 'Financial Insights',
-        description: 'Actionable recommendations to improve your bottom line.',
+        title: 'Platform Strategy',
+        description: 'Focus on the platforms where your customers spend their time.',
       },
     ],
-    tools: ['QuickBooks', 'Xero', 'FreshBooks', 'Wave'],
+    platforms: ['Facebook', 'Instagram', 'Google Business', 'TikTok', 'LinkedIn'],
   },
 ];
 

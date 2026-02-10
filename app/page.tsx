@@ -10,13 +10,13 @@ const services = [
   },
   {
     image: '/images/service-marketing.png',
-    title: 'Marketing Integration',
-    description: 'Social media and delivery platform setup.',
+    title: 'Paid Ad Marketing',
+    description: 'Google, Facebook & Instagram ads that drive results.',
   },
   {
-    image: '/images/bookkeeping-efh.png',
-    title: 'Bookkeeping',
-    description: 'Keep your finances organized and tax-ready.',
+    image: '/images/service-social.png',
+    title: 'Social Media Management',
+    description: 'Build your brand with consistent, engaging content.',
   },
 ];
 
@@ -75,7 +75,7 @@ export default function Home() {
               <span className="text-gold">Get noticed.</span>
             </h1>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl">
-              Web development, marketing integration, and bookkeeping services for small businesses who are ready to stop being invisible.
+              Web development, paid ad marketing, and social media management for small businesses who are ready to stop being invisible.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">

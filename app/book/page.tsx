@@ -4,7 +4,7 @@ import { Card } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Book a Free Consultation',
-  description: 'Schedule a free consultation with EFH Consulting Group to discuss your web development, marketing, or bookkeeping needs.',
+  description: 'Schedule a free consultation with EFH Consulting Group to discuss your web development, paid ad marketing, or social media management needs.',
 };
 
 export default function BookingPage() {

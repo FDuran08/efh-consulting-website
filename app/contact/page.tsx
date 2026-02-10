@@ -4,7 +4,7 @@ import { Card } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with EFH Consulting Group for web development, marketing integration, and bookkeeping services.',
+  description: 'Get in touch with EFH Consulting Group for web development, paid ad marketing, and social media management services.',
 };
 
 const contactInfo = [
@@ -43,11 +43,11 @@ const contactInfo = [
 
 const services = [
   'Web Development',
-  'Marketing Integration',
-  'Bookkeeping Services',
-  'Social Media Setup',
-  'Food Delivery Platform Integration',
-  'Financial Consulting',
+  'Paid Ad Marketing',
+  'Social Media Management',
+  'Google Ads Campaigns',
+  'Facebook & Instagram Ads',
+  'Content Creation',
 ];
 
 export default function ContactPage() {

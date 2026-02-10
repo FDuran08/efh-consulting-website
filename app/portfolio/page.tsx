@@ -5,7 +5,7 @@ import { Button } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
-  description: 'View our portfolio of web development, marketing integration, and bookkeeping projects for businesses.',
+  description: 'View our portfolio of web development, paid ad marketing, and social media management projects for businesses.',
 };
 
 const projects = [
@@ -16,16 +16,16 @@ const projects = [
     tags: ['Next.js', 'Online Ordering', 'Responsive Design'],
   },
   {
-    title: 'Multi-Platform Marketing Setup',
-    category: 'Marketing Integration',
-    description: 'Complete social media presence and food delivery platform integration for a Desert Hot Springs eatery.',
-    tags: ['DoorDash', 'UberEats', 'Instagram', 'Google Business'],
+    title: 'Google Ads Lead Generation',
+    category: 'Paid Ad Marketing',
+    description: 'Strategic Google Ads campaign for a local HVAC company, generating qualified leads and increasing service calls.',
+    tags: ['Google Ads', 'Lead Gen', 'ROI Tracking'],
   },
   {
-    title: 'Small Business Bookkeeping',
-    category: 'Bookkeeping',
-    description: 'Streamlined financial management and reporting system for a local retail store, improving their visibility into cash flow.',
-    tags: ['QuickBooks', 'Monthly Reports', 'Tax Prep'],
+    title: 'Social Media Growth Campaign',
+    category: 'Social Media Management',
+    description: 'Full social media management for a local bakery, growing their Instagram following and driving foot traffic.',
+    tags: ['Instagram', 'Content Creation', 'Community Management'],
   },
   {
     title: 'Professional Services Website',
@@ -34,10 +34,10 @@ const projects = [
     tags: ['WordPress', 'SEO', 'Lead Generation'],
   },
   {
-    title: 'Social Media Brand Refresh',
-    category: 'Marketing Integration',
-    description: 'Complete rebranding of social media profiles with consistent visuals and messaging across all platforms.',
-    tags: ['Facebook', 'Instagram', 'Brand Identity'],
+    title: 'Facebook Ads for Restaurant',
+    category: 'Paid Ad Marketing',
+    description: 'Targeted Facebook and Instagram ad campaigns that increased dine-in reservations and takeout orders.',
+    tags: ['Facebook Ads', 'Instagram Ads', 'Retargeting'],
   },
   {
     title: 'E-commerce Store Setup',
@@ -64,17 +64,17 @@ const capabilities = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
       </svg>
     ),
-    title: 'Marketing Solutions',
-    items: ['Social Media Setup', 'Delivery Platforms', 'Google Business', 'Brand Strategy'],
+    title: 'Paid Ad Marketing',
+    items: ['Google Ads', 'Facebook Ads', 'Instagram Ads', 'YouTube Ads'],
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
       </svg>
     ),
-    title: 'Financial Services',
-    items: ['Bookkeeping', 'Financial Reports', 'Tax Preparation', 'Cash Flow Analysis'],
+    title: 'Social Media Management',
+    items: ['Content Creation', 'Community Management', 'Brand Strategy', 'Analytics & Reporting'],
   },
 ];
 

@@ -23,7 +23,7 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-semibold text-white mt-8">2. Services</h2>
           <p>
-            EFH Consulting Group provides web development, marketing integration, and bookkeeping services. The specific scope of services will be outlined in individual project agreements.
+            EFH Consulting Group provides web development, paid ad marketing, and social media management services. The specific scope of services will be outlined in individual project agreements.
           </p>
 
           <h2 className="text-2xl font-semibold text-white mt-8">3. Payment Terms</h2>

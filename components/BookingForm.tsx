@@ -316,8 +316,8 @@ export default function BookingForm() {
       >
         <option value="">Select a service...</option>
         <option value="web-development">Web Development</option>
-        <option value="marketing">Marketing Integration</option>
-        <option value="bookkeeping">Bookkeeping</option>
+        <option value="paid-ads">Paid Ad Marketing</option>
+        <option value="social-media">Social Media Management</option>
         <option value="multiple">Multiple Services</option>
         <option value="not-sure">Not Sure Yet</option>
       </Select>
