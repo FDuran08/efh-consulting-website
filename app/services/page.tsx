@@ -2,13 +2,26 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button, Card } from '@/components/ui';
+import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'Services',
   description: 'Web development, paid ad marketing, and social media management services for businesses. Custom solutions tailored to your needs.',
 };
 
-const services = [
+interface Service {
+  id: string;
+  icon: ReactNode;
+  title: string;
+  subtitle: string;
+  image: string;
+  description: string;
+  features: { title: string; description: string }[];
+  technologies?: string[];
+  platforms?: string[];
+}
+
+const services: Service[] = [
   {
     id: 'web-development',
     icon: (
@@ -178,12 +191,12 @@ export default function ServicesPage() {
                   {service.description}
                 </p>
 
-                {/* Technologies/Platforms/Tools */}
-                {'technologies' in service && service.technologies && (
+                {/* Technologies/Platforms */}
+                {service.technologies && (
                   <div className="mb-8">
                     <h4 className="text-white font-semibold mb-3">Technologies We Use</h4>
                     <div className="flex flex-wrap gap-2">
-                      {(service.technologies as string[]).map((tech) => (
+                      {service.technologies.map((tech) => (
                         <span key={tech} className="px-3 py-1 bg-gold/10 text-gold text-sm rounded-full">
                           {tech}
                         </span>
@@ -191,25 +204,13 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 )}
-                {'platforms' in service && service.platforms && (
+                {service.platforms && (
                   <div className="mb-8">
                     <h4 className="text-white font-semibold mb-3">Platforms We Work With</h4>
                     <div className="flex flex-wrap gap-2">
-                      {(service.platforms as string[]).map((platform) => (
+                      {service.platforms.map((platform) => (
                         <span key={platform} className="px-3 py-1 bg-gold/10 text-gold text-sm rounded-full">
                           {platform}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {'tools' in service && service.tools && (
-                  <div className="mb-8">
-                    <h4 className="text-white font-semibold mb-3">Tools We Support</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {(service.tools as string[]).map((tool) => (
-                        <span key={tool} className="px-3 py-1 bg-gold/10 text-gold text-sm rounded-full">
-                          {tool}
                         </span>
                       ))}
                     </div>
